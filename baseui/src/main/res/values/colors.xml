@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--白色-->
+    <color name="white">@android:color/white</color>
+    <!--绿色粉丝页状态栏颜色-->
+    <color name="colorfollowDark">#12B5B2</color>
 </resources>

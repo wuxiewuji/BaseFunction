@@ -1,6 +1,5 @@
-package com.tools.xxf.basefunction.uibase;
+package com.tools.xxf.basefunction.rxbase;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,20 +8,23 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.tools.xxf.basefunction.BaseViewContract;
+import com.trello.rxlifecycle.components.support.RxFragment;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * @author :XXF
- *         packageName :dev.jr.moc.more.base
- *         FileName : BaseFragment
- *         Create-Time :  2017/7/13: 14 :10
+ * TODO: 处理以为使用Rx导致内存泄漏而使用的 RxFragment
+ *
+ * @author XXF
+ *         Create Time : 2017/9/5 10:02
  */
-public abstract class BaseFragment<T extends BaseViewContract.BasePresenter> extends Fragment
+public abstract class RxBaseFragment<T extends BaseViewContract.BasePresenter> extends RxFragment
         implements BaseViewContract
         .BaseView<T> {
     protected String classSimpleName = "";
-    private ProgressDialog sendDialog;
 
     protected View parentView;
     private FragmentActivity activity;
@@ -87,6 +89,7 @@ public abstract class BaseFragment<T extends BaseViewContract.BasePresenter> ext
 
     }
 
+
     public FragmentActivity getSupportActivity() {
         return super.getActivity();
     }
@@ -96,22 +99,4 @@ public abstract class BaseFragment<T extends BaseViewContract.BasePresenter> ext
         return (T) parentView.findViewById(id);
     }
 
-    @Override
-    public void showSnackbar(String msg, int druation, View.OnClickListener listener) {
-
-    }
-
-    @Override
-    public void loading(String msg) {
-        if (null == sendDialog && null != getActivity())
-            sendDialog = new ProgressDialog(getActivity());
-        sendDialog.setMessage(msg);
-        sendDialog.show();
-    }
-
-    @Override
-    public void loadcomplete() {
-        if (sendDialog != null)
-            sendDialog.dismiss();
-    }
 }
