@@ -61,11 +61,6 @@ public abstract class RxBaseFragment<T extends BaseViewContract.BasePresenter> e
     public abstract void finishCreateView(Bundle state);
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
     public void onDestroyView() {
         super.onDestroyView();
         if (null != mPresenter) {

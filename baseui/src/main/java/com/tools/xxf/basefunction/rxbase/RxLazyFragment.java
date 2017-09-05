@@ -18,7 +18,7 @@ import butterknife.Unbinder;
 /**
  * TODO:懒加载
  * @author XXF
- * Create Time : 2017/9/5 10:03
+ * Create Time : 2017/9/5 10:35
  */
 public abstract class RxLazyFragment<T extends BaseViewContract.BasePresenter> extends 
         RxBaseFragment<T> {
@@ -30,13 +30,9 @@ public abstract class RxLazyFragment<T extends BaseViewContract.BasePresenter> e
     protected boolean isVisible;
     private Unbinder bind;
 
-    public abstract
-    @LayoutRes
-    int getLayoutResId();
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
-        parentView = inflater.inflate(getLayoutResId(), container, false);
+        parentView = inflater.inflate(setLayoutId(), container, false);
         activity = getSupportActivity();
         return parentView;
     }
