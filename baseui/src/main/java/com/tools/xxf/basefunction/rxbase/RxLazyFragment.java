@@ -1,16 +1,13 @@
 package com.tools.xxf.basefunction.rxbase;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.tools.xxf.basefunction.BaseViewContract;
-import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

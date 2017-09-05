@@ -33,7 +33,7 @@ public abstract class RxBaseActivity<T extends BaseViewContract.BasePresenter> e
     /**
      * 初始化views
      *
-     * @param savedInstanceState
+     * @param savedInstanceState :保存的缓存数据
      */
     public abstract void initViews(Bundle savedInstanceState);
 
