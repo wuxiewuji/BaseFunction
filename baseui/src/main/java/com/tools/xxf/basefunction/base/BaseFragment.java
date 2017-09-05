@@ -1,26 +1,27 @@
-package com.tools.xxf.basefunction.rxbase;
+package com.tools.xxf.basefunction.base;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.tools.xxf.basefunction.BaseViewContract;
-import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * TODO: 处理以为使用Rx导致内存泄漏而使用的 RxFragment
- *
- * @author XXF
- *         Create Time : 2017/9/5 10:02
+ * @author :XXF
+ *         packageName :dev.jr.moc.more.base
+ *         FileName : BaseFragment
+ *         Create-Time :  2017/7/13: 14 :10
  */
-public abstract class RxBaseFragment<T extends BaseViewContract.BasePresenter> extends RxFragment
+public abstract class BaseFragment<T extends BaseViewContract.BasePresenter> extends Fragment
         implements BaseViewContract
         .BaseView<T> {
     protected String classSimpleName = "";
@@ -56,7 +57,7 @@ public abstract class RxBaseFragment<T extends BaseViewContract.BasePresenter> e
     /**
      * 初始化views
      *
-     * @param state ：保存的bundle
+     * @param state
      */
     public abstract void finishCreateView(Bundle state);
 
@@ -87,7 +88,6 @@ public abstract class RxBaseFragment<T extends BaseViewContract.BasePresenter> e
         this.activity = null;
 
     }
-
 
     public FragmentActivity getSupportActivity() {
         return super.getActivity();

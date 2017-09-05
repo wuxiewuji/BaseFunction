@@ -17,10 +17,7 @@ import android.widget.LinearLayout;
 import com.tools.xxf.basefunction.R;
 
 /**
- * Created by Jaeger on 16/2/14.
- * <p>
- * Email: chjie.jaeger@gmail.com
- * GitHub: https://github.com/laobie
+ * TODO 借用的 Jaeger statusbar工具类实现状态栏的控制
  */
 public class StatusBarUtil {
 
